@@ -250,9 +250,20 @@ return [
         ],
         ['header' => 'VENTAS'],
         [
-            'text'       => 'Realizar ventas',
+            'text'    => 'Realizar ventas',
             'icon'    => 'fas fa-fw fa-money-bill',
-            'url'        => '/sales',
+            'url'     => '/sales',
+        ],
+        ['header' => 'REPORTES'],
+        [
+            'text'    => 'Stock de productos',
+            'icon'    => 'fas fa-fw fa-chart-bar',
+            'url'     => '/reports/stockReport',
+        ],
+        [
+            'text'    => 'Productos más vendidos',
+            'icon'    => 'fas fa-fw fa-chart-bar',
+            'url'     => '/reports/mostProductsSold',
         ],
     ],
 

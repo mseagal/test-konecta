@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::prefix('products')->group( function (){
 });
 
 Route::resource('sales', SalesController::class)->only(['index','store']);
+Route::prefix('reports')->group(function () {
+    Route::get('stockReport',[ReportController::class,'stockReport']);
+    Route::get('mostProductsSold',[ReportController::class,'mostProductsSold']);
+});
