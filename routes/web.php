@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::prefix('products')->group( function (){
     Route::get('stock/{product}',[ProductController::class,'viewSupply'])->name('products.viewSupply');
     Route::put('stock/{product}',[ProductController::class,'supply'])->name('products.supply');
 });
+
+Route::resource('sales', SalesController::class)->only(['index','store']);
