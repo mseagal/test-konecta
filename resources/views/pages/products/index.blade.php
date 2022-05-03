@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 @section('content_header')
 <div class="row">
-    <div class="col-6 col-sm-4 col-md-3 col-lg-1">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
         <h1>Productos</h1>
     </div>
     <div class="col-6 pl-4">
