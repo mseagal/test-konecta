@@ -18,3 +18,12 @@ ejecutar `php artisan migrate --seed`
 
 # Paso 6 (Run server)
 finalmente `php artisan serve`
+
+# Consultas SQL
+- Producto que más stock tiene `SELECT * FROM products ORDER BY stock DESC LIMIT 1;`
+- Producto más vendido: 
+`SELECT products.id, products.name as product_name, SUM(sales.quantity) AS total FROM sales
+INNER JOIN products ON sales.product_id = products.id
+GROUP BY products.id desc
+ORDER BY total desc
+LIMIT 1`
