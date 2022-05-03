@@ -1,5 +1,7 @@
-# Test-Konecta
-Prueba técnica
+# Test-Konecta - Requisitos
+- Composer ^2.0.11
+- PHP ^8.0
+- El proyecto está en Laravel 9
 
 # Paso 1 (BD)
 Crear base de datos llamada 'test_konect'
