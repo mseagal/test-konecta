@@ -2,13 +2,13 @@
 @section('content_header')
     <div class="row">
         <div class="col-12">
-            <h1>Reporte Stock de Productos</h1>
+            <h1>Reporte - Productos con más stock</h1>
         </div>
     </div>
 @stop
 
 @section('content')
-<div>
+<div style="width: 90%">
     <canvas id="myChart"></canvas>
 </div>
 @stop
@@ -21,22 +21,17 @@
     @include('layout.bootstrap-js')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const labels = [
-          'January',
-          'February',
-          'March',
-          'April',
-          'May',
-          'June',
-        ];
-      
+
+        var respData = ('<?php echo ($data) ?>');
+        respData = JSON.parse(respData);
+        
         const data = {
-          labels: labels,
+          labels: respData.map( item => item.name),
           datasets: [{
-            label: 'My First dataset',
+            label: 'Productos',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
+            data: respData.map( item => item.stock)
           }]
         };
       
